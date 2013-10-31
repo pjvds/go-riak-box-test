@@ -3,7 +3,7 @@ package wercker
 import (
 	. "github.com/onsi/ginkgo"
 	. "github.com/onsi/gomega"
-	//"github.com/tpjg/goriakpbc"
+	"github.com/tpjg/goriakpbc"
 	"os"
 	"testing"
 )
@@ -17,6 +17,13 @@ var _ = Describe("Riak", func() {
 	Context("When using the riak box at wercker", func() {
 		It("should export PBCONNECT", func() {
 			Expect(os.Getenv("MJDSYS_RIAK_PBCONNECT")).ToNot(BeEmpty())
+		})
+		It("should accept connections", func() {
+			client := riak.New(os.Getenv("MJDSYS_RIAK_PBCONNECT"))
+			err := client.Connect()
+			Expect(err).To(BeNil())
+
+			client.Close()
 		})
 	})
 })
