@@ -27,10 +27,10 @@ var _ = Describe("Riak", func() {
 
 			client.Close()
 		})
-		It("should accept connections on localhost", func() {
+		It("should not accept connections on localhost", func() {
 			client := riak.New("localhost:8087")
 			err := client.Connect()
-			Expect(err).To(BeNil())
+			Expect(err).ToNot(BeNil())
 
 			client.Close()
 		})
