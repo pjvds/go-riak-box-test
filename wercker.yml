@@ -1,6 +1,6 @@
 box: wercker/golang
 services:
-  - mjdsys/riak@0.0.3
+  - mjdsys/riak
 build:
   steps:
     - script:
