@@ -5,13 +5,13 @@ build:
   steps:
     - setup-go-workspace
     - script:
-    	name: Get dependencies
-    	code: |-
-    		go get ./...
-    		go get github.com/onsi/ginkgo
-    		go get github.com/onsi/gomega
-    		go install github.com/onsi/ginkgo/ginkgo
+        name: Get dependencies
+        code: |-
+            go get ./...
+            go get github.com/onsi/ginkgo
+            go get github.com/onsi/gomega
+            go install github.com/onsi/ginkgo/ginkgo
     - script:
-    	name: Tests
-    	code: |-
-    		ginkgo
+        name: Tests
+        code: |-
+            ginkgo
