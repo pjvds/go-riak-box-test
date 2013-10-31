@@ -1,6 +1,6 @@
 box: wercker/golang
 services:
-  - mjdsys/riak@0.0.7
+  - mjdsys/riak@0.0.3
 build:
   steps:
     - setup-go-workspace
