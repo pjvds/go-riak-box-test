@@ -25,7 +25,7 @@ var _ = Describe("Riak", func() {
 			Expect(httpconnect).ToNot(BeEmpty())
 		})
 		It("should accept connections via pbconnect", func() {
-			client := riak.New(bpconnect)
+			client := riak.New(pbconnect)
 			err := client.Connect()
 			Expect(err).To(BeNil())
 
