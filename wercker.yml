@@ -7,10 +7,14 @@ build:
     - script:
         name: Get dependencies
         code: |-
-            go get ./...
             go get github.com/onsi/ginkgo
             go get github.com/onsi/gomega
+            go get github.com/tpjg/goriakpbc
             go install github.com/onsi/ginkgo/ginkgo
+    - script:
+        name: Build
+        code: |-
+            go build -a
     - script:
         name: Tests
         code: |-
