@@ -21,7 +21,7 @@ var _ = Describe("Riak", func() {
 			Expect(host).ToNot(BeEmpty())
 		})
 		It("should accept connections", func() {
-			client := riak.New(host)
+			client := riak.New(host + ":8087")
 			err := client.Connect()
 			Expect(err).To(BeNil())
 
